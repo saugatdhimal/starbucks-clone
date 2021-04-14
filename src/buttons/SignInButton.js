@@ -5,7 +5,7 @@ import './SignInButton.css'
 function SignInButton() {
     return (
         <Link className="signInButton" to="/account/signin">
-            sign in
+            Sign in
         </Link>
     )
 }

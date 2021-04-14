@@ -22,7 +22,7 @@ nav {
     left: 0;
     bottom: 0;
     width: 100%;
-    background: red;
+    background: white;
     z-index: 1;
   }
   
@@ -123,5 +123,6 @@ nav {
   @media (max-width: 350px) {
     .navigation__buttons {
       flex-direction: column;
+      padding-right: 10px;
     }
   }

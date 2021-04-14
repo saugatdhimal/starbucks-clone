@@ -1,0 +1,116 @@
+.homeScreen {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.homeScreen__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  background-color: #d4e9e2;
+}
+
+.homeScreen__top > p {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.homeScreen__starbucks p {
+  color: #1e3932;
+}
+
+.homeScreen__starbucks button {
+  color: darkgreen;
+  border-color: darkgreen;
+}
+
+.homeScreen__starbucks button:hover {
+  background-color: #c5dfd6;
+}
+
+.homeScreen__moreWaysToDiscover > h2{
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(8, 53, 8);
+}
+
+.homeScreen__info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.homeScreen__info .homeScreenProduct {
+  flex-direction: column;
+  height: 100%;
+}
+
+.font .homeScreenProduct h2 {
+  font-size: 23px;
+  font-weight: 600;
+  text-transform: inherit;
+}
+
+.font .homeScreenProduct p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  max-width: 90%;
+}
+
+.homeScreen__texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  padding: 15px;
+  text-align: center;
+}
+
+.homeScreen__texts p {
+  font-size: 12px;
+  line-height: 30px;
+}
+
+@media (min-width: 768px) {
+  .homeScreen__top > p {
+    max-width: 55%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homeScreen__top {
+    padding: 30px;
+  }
+
+  .homeScreen__top > p {
+    font-size: 19px;
+    line-height: 35px;
+  }
+  .homeScreen__reverse .homeScreenProduct {
+    flex-direction: row-reverse;
+  }
+
+  .homeScreen__moreWaysToDiscover > h2{
+    font-size: 52px;
+    font-weight: 800;
+    padding: 10px 0;
+  }
+
+  .homeScreen__info {
+    flex-direction: row;
+  }
+
+  .homeScreen__texts p {
+    max-width: 50%;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+}

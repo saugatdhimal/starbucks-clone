@@ -1,5 +1,5 @@
 .header {
-    height: 101px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,6 +8,7 @@
     0 0 2px rgba(0, 0, 0, 0.07);
     z-index: 2;
     background-color: white;
+    
 }
 
 .header__menuPage {
@@ -17,12 +18,13 @@
     width: 95%;
 }
 
-.header__logo {
-    margin-right: 25px;
-}
 .header__logo > img {
     object-fit: contain;
     height: 50px;
+}
+
+.header__logo {
+    margin-right: 25px;
 }
 
 .header__left {

@@ -5,6 +5,8 @@ import { Fade } from 'react-awesome-reveal'
 import HomeScreen from "./screens/HomeScreen";
 import Header from "./Header";
 import Footer from "./Footer";
+import SignInForm from "./forms/SignInForm";
+import SignUpForm from "./forms/SignUpForm";
 
 function App() {
   return (
@@ -17,6 +19,14 @@ function App() {
             <Fade>
               <Footer />
             </Fade>
+          </Route>
+          <Route path="/account/signin" exact>
+            <Header />
+            <SignInForm />
+          </Route>
+          <Route path="/account/create" exact>
+            <Header />
+            <SignUpForm />
           </Route>
         </Switch>
       </Router>

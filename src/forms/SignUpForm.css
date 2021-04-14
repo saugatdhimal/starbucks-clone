@@ -1,0 +1,70 @@
+.signUpForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0;
+}
+
+.signUpForm h4 {
+    font-size: 28px;
+}
+
+.signUpForm p {
+    text-decoration: underline;
+    font-weight: 700;
+    color:#00704A;
+}
+
+.signUpForm > .MuiPaper-root {
+    width: 500px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    border-radius: 15px;
+}
+
+.signUpForm form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.signUpForm button {
+    align-self: flex-end;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #3CB371;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: unset;
+}
+
+.signUpForm__error {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: smaller;
+  }
+  
+  .signUpForm__error > .MuiSvgIcon-root {
+    color: #e75b52;
+  }
+
+  .signUpForm__inputcontainer {
+      position: relative;
+  }
+  
+  .signUpForm__reportIcon {
+    position: absolute;
+    right: 0;
+    top: 25px;
+  }

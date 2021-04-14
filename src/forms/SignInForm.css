@@ -1,0 +1,72 @@
+.signInForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    padding: 50px 0;
+}
+
+.signInForm h4 {
+    font-size: 28px;
+}
+
+.signInForm p {
+    text-decoration: underline;
+    font-weight: 700;
+    color:#00704A;
+}
+
+.signInForm > .MuiPaper-root {
+    width: 500px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    border-radius: 15px;
+}
+
+.signInForm form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.signInForm__inputcontainer {
+    position: relative;
+}
+
+
+.signInForm button {
+    align-self: flex-end;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #3CB371;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: unset;
+}
+
+.signInForm__error {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: smaller;
+  }
+  
+  .signInForm__error > .MuiSvgIcon-root {
+    color: #e75b52;
+  }
+  
+  .signInForm__reportIcon {
+    position: absolute;
+    right: 0;
+    top: 25px;
+  }

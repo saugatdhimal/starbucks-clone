@@ -6,15 +6,36 @@ import CloseIcon from "@material-ui/icons/Close";
 import ReportProblemRoundedIcon from "@material-ui/icons/ReportProblemRounded";
 import VisibilityOffOutlinedIcon from "@material-ui/icons/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
+import { auth } from "../firebase";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { login } from "../features/userSlice";
 
 function SignUpForm() {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const {register,formState: { errors },handleSubmit,} = useForm();
+  
+  const onSubmit = ({ firstname, lastname, email, password }) => {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        userAuth.user
+          .updateProfile({
+            displayName: `${firstname} ${lastname}`,
+          })
+          .then(() => {
+            dispatch(
+              login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: firstname,
+              })
+            );
+            history.replace("/menu");
+          });
+      })
+      .catch((error) => alert(error.message));
   };
   return (
     <div className="signUpForm">
@@ -101,7 +122,7 @@ function SignUpForm() {
           <br />
           <p>Already have a Starbucks gift card?</p>
           <br />
-          <Button elevation={3} variant="contained" type="submit">
+          <Button elevation={3} variant="contained" type="submit" size="large">
             Create account
           </Button>
         </form>

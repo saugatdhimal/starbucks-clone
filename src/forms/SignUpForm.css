@@ -38,11 +38,11 @@
 
 .signUpForm button {
     align-self: flex-end;
-    height: 50px;
+    height: 55px;
     border-radius: 50px;
     background-color: #3CB371;
     color: white;
-    font-size: 17px;
+    font-size: 19px;
     font-weight: bold;
     text-transform: unset;
 }

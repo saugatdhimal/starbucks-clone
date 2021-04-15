@@ -2,17 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { Example } from "./menu/Example";
-import { useSelector } from 'react-redux'
-import { selectUser } from './features/userSlice'
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 import FindStore from "./FindStore";
 import SignInButton from "./buttons/SignInButton";
 import SignUpButton from "./buttons/SignUpButton";
 import LogoutButton from "./buttons/LogoutButton";
 
-function Header({menuPage}) {
-    const user = useSelector(selectUser)
+function Header({ menuPage }) {
+  const user = useSelector(selectUser);
   return (
-    <div className={`header ${menuPage && 'header__menuPage'}`}>
+    <div className={`header ${menuPage && "header__menuPage"}`}>
       <div className="header__left">
         <Link className="header__logo" to="/">
           <img
@@ -31,22 +31,18 @@ function Header({menuPage}) {
         </Link>
       </div>
       <div className="header__right">
-          <Example />
-          <FindStore />
-          {!user ? (
-              <>
-              <Link to='/account/signin'>
-              <SignInButton />
-              </Link>
-              <Link to='/account/create'>
-              <SignUpButton />
-              </Link>
-              </>
-          ): (
-              <div className="header__logout">
-                  {menuPage ? <LogoutButton /> : <Link to='/menu'> Order Now</Link>}
-              </div>
-          )}
+        <Example />
+        <FindStore />
+        {!user ? (
+          <>
+            <SignInButton />
+            <SignUpButton />
+          </>
+        ) : (
+          <div className="header__logout">
+            {menuPage ? <LogoutButton /> : <Link to="/menu"> Order Now</Link>}
+          </div>
+        )}
       </div>
     </div>
   );

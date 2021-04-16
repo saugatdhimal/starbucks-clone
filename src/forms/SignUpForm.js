@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SignUpForm.css";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useForm } from "react-hook-form";
@@ -15,7 +15,7 @@ function SignUpForm() {
   const dispatch = useDispatch();
   const history = useHistory();
   const {register,formState: { errors },handleSubmit,} = useForm();
-  
+  const [ passwordVisibility, setPasswordVisibility ] = useState(false);
   const onSubmit = ({ firstname, lastname, email, password }) => {
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -102,12 +102,24 @@ function SignUpForm() {
           </div>
           <div className="signUpForm__inputcontainer">
             <TextField
-              type="password"
+              type={passwordVisibility ? "text" : "password"}
               variant="standard"
               label="Password"
               fullWidth
               {...register("password", { required: true })}
             />
+            {passwordVisibility ? (
+              <VisibilityOutlinedIcon 
+              className="signUpForm__visibilityIcon"
+              onClick = {() => setPasswordVisibility(!passwordVisibility)}
+              />
+            ): (
+              <VisibilityOffOutlinedIcon
+              className="signUpForm__visibilityIcon"
+              onClick = {() => setPasswordVisibility(!passwordVisibility)}
+              />
+            )
+          }
             {errors.password && (
               <div className="signUpForm__error">
                 <CloseIcon fontSize="small" />

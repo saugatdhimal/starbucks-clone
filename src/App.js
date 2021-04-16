@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./firebase";
 import { login, logout, selectUser } from "./features/userSlice";
 import MenuScreen from "./screens/MenuScreen";
+import RewardScreen from "./screens/RewardScreen";
 
 function App() {
   const user = useSelector(selectUser);
@@ -53,6 +54,11 @@ function App() {
           <Route path="/menu" exact>
             <Header menuPage />
             <MenuScreen />
+            <Footer />
+          </Route>
+          <Route path="/reward" exact>
+            <Header rewardPage />
+            <RewardScreen />
             <Footer />
           </Route>
         </Switch>

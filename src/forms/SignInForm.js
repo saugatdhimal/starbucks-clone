@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SignInForm.css";
 import { TextField, Button, Paper } from "@material-ui/core";
 import { useForm } from "react-hook-form";
@@ -9,13 +9,11 @@ import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
 import { useDispatch } from "react-redux";
 import { auth } from "../firebase";
 import { login } from "../features/userSlice";
-import { useHistory } from "react-router-dom";
 
 function SignInForm() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const {register,formState: { errors },handleSubmit,} = useForm();
-
+  const [ passwordVisibility, setPasswordVisibility ] = useState(false)
   const onSubmit = ({ email, password }) => {
     auth
       .signInWithEmailAndPassword(email, password)
@@ -39,11 +37,11 @@ function SignInForm() {
             <TextField
               type="email"
               variant="standard"
-              label="email"
+              label="Email"
               fullWidth
               {...register("email", { required: true })}
             />
-            {errors.username && (
+            {errors.email && (
               <div className="signInForm__error">
                 <CloseIcon fontSize="small" />
                 <span>Enter a email</span>
@@ -56,12 +54,24 @@ function SignInForm() {
           </div>
           <div className="signInForm__inputcontainer">
             <TextField
-              type="password"
+              type={passwordVisibility ? "text" : "password"}
               variant="standard"
               label="Password"
               fullWidth
               {...register("password", { required: true })}
             />
+            {passwordVisibility ? (
+              <VisibilityOutlinedIcon 
+              className="signInForm__visibilityIcon"
+              onClick = {() => setPasswordVisibility(!passwordVisibility)}
+              />
+            ): (
+              <VisibilityOffOutlinedIcon
+              className="signInForm__visibilityIcon"
+              onClick = {() => setPasswordVisibility(!passwordVisibility)}
+              />
+            )
+          }
             {errors.password && (
               <div className="signInForm__error">
                 <CloseIcon fontSize="small" />

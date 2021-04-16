@@ -9,10 +9,10 @@ import SignInButton from "./buttons/SignInButton";
 import SignUpButton from "./buttons/SignUpButton";
 import LogoutButton from "./buttons/LogoutButton";
 
-function Header({ menuPage }) {
+function Header({ menuPage, rewardPage }) {
   const user = useSelector(selectUser);
   return (
-    <div className={`header ${menuPage && "header__menuPage"}`}>
+    <div className={`header ${(menuPage || rewardPage) && "header__fixed"}`}>
       <div className="header__left">
         <Link className="header__logo" to="/">
           <img
@@ -20,10 +20,16 @@ function Header({ menuPage }) {
             alt="starbucks logo"
           />
         </Link>
-        <Link className="header__link" to="/menu">
+        <Link
+          className={`header__link ${menuPage && "header__linkBorder"}`}
+          to="/menu"
+        >
           Menu
         </Link>
-        <Link className="header__link" to="/">
+        <Link
+          className={`header__link ${rewardPage && "header__linkBorder"}`}
+          to="/reward"
+        >
           Rewards
         </Link>
         <Link className="header__link" to="/">
@@ -40,7 +46,11 @@ function Header({ menuPage }) {
           </>
         ) : (
           <div className="header__logout">
-            {menuPage ? <LogoutButton /> : <Link to="/menu"> Order Now</Link>}
+            {menuPage || rewardPage ? (
+              <LogoutButton />
+            ) : (
+              <Link to="/menu"> Order Now</Link>
+            )}
           </div>
         )}
       </div>

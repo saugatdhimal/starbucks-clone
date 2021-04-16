@@ -47,6 +47,12 @@
     text-transform: unset;
 }
 
+.signUpForm__visibilityIcon {
+    position: absolute;
+    right: 30px;
+    top: 23px;
+  }
+
 .signUpForm__error {
     margin-top: 5px;
     display: flex;

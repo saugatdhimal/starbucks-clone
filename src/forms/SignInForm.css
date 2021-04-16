@@ -53,6 +53,12 @@
     text-transform: unset;
 }
 
+.signInForm__visibilityIcon {
+    position: absolute;
+    right: 30px;
+    top: 23px;
+  }
+
 .signInForm__error {
     margin-top: 5px;
     display: flex;

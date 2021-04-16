@@ -4,10 +4,12 @@ nav {
     right: 0;
     bottom: 0;
     width: 600px;
-    width: 70vw;
+    max-width: 70vw;
+    height: 100vh;
     display: none;
     overflow: hidden;
-    z-index: 999;
+    z-index: 100;
+    
   }
   
   @media (max-width: 768px) {

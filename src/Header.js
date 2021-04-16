@@ -24,7 +24,7 @@ function Header({ menuPage, rewardPage }) {
           className={`header__link ${menuPage && "header__linkBorder"}`}
           to="/menu"
         >
-          Menu
+         Menu
         </Link>
         <Link
           className={`header__link ${rewardPage && "header__linkBorder"}`}

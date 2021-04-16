@@ -7,6 +7,7 @@
     0 0 2px rgba(0, 0, 0, 0.07);
     z-index: 2;
     background-color: white;
+    position: relative;
 }
 
 .header__fixed {
@@ -28,8 +29,7 @@
 .header__left {
     display: flex;
     align-items: center;
-    gap: 20px;
-    height: 100%;
+    gap: 20px; 
     padding-left: 40px;
 }
 
@@ -41,7 +41,7 @@
     letter-spacing: 1.4px;
     opacity: .87;
     text-transform: uppercase;
-    height: 100%;
+    
     display: flex;
     align-items: center;
 }
@@ -74,6 +74,12 @@
 @media (min-width: 768px) {
     .header__left > .header__link {
         display: flex;
+        padding: 36px 0;
+        border-bottom: 6px solid transparent; 
+    }
+
+    .header__left > .header__linkBorder  {
+        border-bottom: 6px solid #1e3932; 
     }
 
     .header__right > a , .header__right > button {
@@ -86,15 +92,6 @@
 
    .menuToggle__button {
         display: none;
-    }
-
-    .header__link {
-        border-bottom: 6px solid transparent;
-        margin-bottom: 6px;
-    }
-
-    .header__linkBorder {
-        border-color: #008248;
     }
 }
 

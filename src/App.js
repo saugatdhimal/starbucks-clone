@@ -12,6 +12,7 @@ import { auth } from "./firebase";
 import { login, logout, selectUser } from "./features/userSlice";
 import MenuScreen from "./screens/MenuScreen";
 import RewardScreen from "./screens/RewardScreen";
+import FeaturedScreen from "./screens/FeaturedScreen";
 
 function App() {
   const user = useSelector(selectUser);
@@ -59,6 +60,11 @@ function App() {
           <Route path="/reward" exact>
             <Header rewardPage />
             <RewardScreen />
+            <Footer />
+          </Route>
+          <Route path="/menu/featured" exact>
+            <Header />
+            <FeaturedScreen />
             <Footer />
           </Route>
         </Switch>

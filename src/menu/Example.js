@@ -30,17 +30,25 @@ export const Example = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+  const [ navHeight, setNavHeight ] = React.useState(false);
 
   return (
     <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={height}
+      className={navHeight && "nav__height"}
       ref={containerRef}
     >
       <motion.div className="background" variants={sidebar} />
-      <Navigation toggle={() => toggleOpen()}/>
-      <MenuToggle toggle={() => toggleOpen()} />
+      <Navigation toggle={() => {
+        toggleOpen();
+        setNavHeight(!navHeight)
+      }}/>
+      <MenuToggle toggle={() => {
+        toggleOpen();
+        setNavHeight(!navHeight)
+      }} />
     </motion.nav>
   );
 };

@@ -5,11 +5,13 @@ nav {
     bottom: 0;
     width: 600px;
     max-width: 70vw;
-    height: 100vh;
     display: none;
     overflow: hidden;
     z-index: 100;
-    
+  }
+
+  .nav__height {
+    height: 500px;
   }
   
   @media (max-width: 768px) {

@@ -10,7 +10,7 @@ function HomeScreen() {
       <Fade>
         <div className="homeScreen__top">
           <p>
-            We require facial coverings in all stores to protect the health of
+            Wee require facial coverings in all stores to protect the health of
             our customers and partners (employees), and help stop the spread of
             COVID-19. <Link onClick={() => alert("You can go to www.starbucks.com to Learn More. ( Thank You )")}>Learn more</Link>
           </p>
